@@ -64,9 +64,3 @@ function addMessageToFeed(text, randomTag, timestamp) {
     messageCard.appendChild(messageFooter);
     messageFeed.prepend(messageCard);
 }
-
-postButton.addEventListener('click', () => {
-    console.log('Post button clicked');
-    const messageText = messageInput.value.trim();
-    console.log('Message text:', messageText);
-});
