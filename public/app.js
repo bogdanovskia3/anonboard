@@ -1,8 +1,14 @@
-const MAX_CHAR = 200;
+const MAX_CHAR = 300; // Use consistent character limit
 const postButton = document.getElementById('postButton');
 const messageInput = document.getElementById('messageInput');
 const charCount = document.getElementById('charCount');
 const messageFeed = document.getElementById('messageFeed');
+
+// Update the character count dynamically while typing
+messageInput.addEventListener('input', () => {
+    const currentLength = messageInput.value.length;
+    charCount.textContent = `${currentLength}/${MAX_CHAR}`;  // Update the character count to match MAX_CHAR
+});
 
 postButton.addEventListener('click', async () => {
     const messageText = messageInput.value.trim();
@@ -15,14 +21,14 @@ postButton.addEventListener('click', async () => {
             });
             const newMessage = await response.json();
 
-            // Update feed
+            // Update feed with the new message
             addMessageToFeed(
                 newMessage.text,
                 newMessage.randomTag,
                 newMessage.timestamp
             );
-            messageInput.value = '';
-            charCount.textContent = `0/${MAX_CHAR}`;
+            messageInput.value = '';  // Clear input
+            charCount.textContent = `0/${MAX_CHAR}`;  // Reset character count
         } catch (error) {
             console.error('Failed to post message:', error);
         }
@@ -45,7 +51,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Helper to add a message to the feed
+// Helper function to add a message to the feed
 function addMessageToFeed(text, randomTag, timestamp) {
     const messageCard = document.createElement('div');
     messageCard.classList.add('message-card');

@@ -1,106 +1,188 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212;  /* Darker background for a mysterious look */
+    color: #eaeaea;  /* Light gray for better contrast */
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('https://example.com/dark-grunge-bg.jpg'); /* Grunge texture background */
+    background-size: cover;
+    background-position: center;
 }
 
+/* Header Styling */
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: rgba(0, 123, 255, 0.9);  /* Bright blue for contrast */
+    color: #fff;  /* White text for readability */
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     text-align: center;
+    font-size: 1.8rem;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6); /* More shadow for depth */
+    backdrop-filter: blur(5px);
 }
 
+/* Container and Layout */
 .container {
     max-width: 800px;
     width: 100%;
-    padding: 20px;
-}
-
-.submission-area {
-    background-color: white;
-    border: 1px solid #ddd;
+    padding: 30px;
+    margin-top: 20px;
+    background-color: rgba(40, 40, 40, 0.7); /* Dark background with some transparency */
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
+/* Submission Area - Dark Theme */
+.submission-area {
+    background-color: rgba(40, 40, 40, 0.9);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Textarea Styling */
 textarea {
     width: 100%;
     height: 100px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 15px;
     font-size: 16px;
+    color: #eaeaea;  /* Light gray for better text visibility */
+    background-color: #333;  /* Dark background */
     resize: none;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-
+/* Post Button Styling */
 .post-button {
-    background-color: #007bff;
-    color: white;
+    background-color: #00c8ff;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: all 0.3s ease-in-out;
 }
 
 .post-button:hover {
-    background-color: #0056b3;
+    background-color: #005c8d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
+/* Character Count Style */
 .character-count {
-    color: #666;
+    color: #999;
     font-size: 14px;
+    letter-spacing: 1px;
 }
 
+/* Message Feed Styling */
 .message-feed {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 20px;
+    width: 100%;
 }
 
+/* Message Card Styling */
 .message-card {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 1px solid #444;
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
 }
 
-.message-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-size: 12px;
-    color: #888;
+/* Add Glitch Effect to Messages */
+.message-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://example.com/glitch-effect.png'); /* Custom glitch effect */
+    opacity: 0.2;
+    z-index: -1;
+    animation: glitch 2s infinite;
 }
 
+@keyframes glitch {
+    0% {
+        transform: translate(0) skew(0deg);
+    }
+    25% {
+        transform: translate(-5px, 5px) skew(3deg);
+    }
+    50% {
+        transform: translate(5px, -5px) skew(-3deg);
+    }
+    75% {
+        transform: translate(-3px, 3px) skew(2deg);
+    }
+    100% {
+        transform: translate(0) skew(0deg);
+    }
+}
+
+/* Footer Styling */
 footer {
-    margin-top: 20px;
-    color: #555;
+    margin-top: 30px;
+    color: #888;
     font-size: 14px;
+    text-align: center;
 }
 
 footer a {
-    color: #007bff;
+    color: #00c8ff;
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Message Footer Styling */
+.message-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #bbb;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Ensures wrap of long words in message cards */
+.message-card p {
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    color: #eaeaea; /* Lighter text for readability */
+    font-family: 'Courier New', monospace;
+}
+
+/* Add some cool animated hover effects to messages */
+.message-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+    background-color: rgba(60, 60, 60, 0.9);
 }
