@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnonBoard</title>
+    <link rel="stylesheet" href="public/styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1>AnonBoard</h1>
+        <p>Speak your mind, no names attached.</p>
+    </header>
+
+    <div class="container">
+        <div class="submission-area">
+            <textarea id="messageInput" placeholder="Type your message here..."></textarea>
+            <div class="controls">
+                <span id="charCount" class="character-count">0/280</span>
+                <button id="postButton" class="post-button">Post</button>
+            </div>
+        </div>
+
+        <div class="message-feed" id="messageFeed">
+            <!-- Messages will appear here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a> | <a href="#">About</a>
+        </p>
+    </footer>
+
+    <script src="public/app.js"></script>
+</body>
+</html>
